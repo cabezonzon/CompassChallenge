@@ -15,3 +15,5 @@ potential duplicates, and handle missing or null values.
    similarity score.
 
 3. ContactProcessor Class: Reads contact data from a CSV file, processes the data, and identifies potential duplicates.
+
+4. ExcelUtil Class: Provides methods to load contacts from Excel files. 
