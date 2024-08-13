@@ -16,15 +16,15 @@ public class ContactProcessor {
         Set<String> processedPairs = new HashSet<>();
 
         for (int i = 0; i < contacts.size(); i++) {
-            Contact contact1 = contacts.get(i);
+            Contact sourceContact = contacts.get(i);
             for (int j = i + 1; j < contacts.size(); j++) {
-                Contact contact2 = contacts.get(j);
-                String pairKey = generatePairKey(contact1.getContactID(), contact2.getContactID());
+                Contact targetContact = contacts.get(j);
+                String pairKey = generatePairKey(sourceContact.getContactID(), targetContact.getContactID());
                 if (!processedPairs.contains(pairKey)) {
-                    String accuracy = compare(contact1, contact2);
+                    String accuracy = compare(sourceContact, targetContact);
                     if (!accuracy.equals("None")) {
-                        String result = "Contact ID: " + contact1.getContactID() +
-                                " matches Contact ID: " + contact2.getContactID() +
+                        String result = "Contact ID: " + sourceContact.getContactID() +
+                                " matches Contact ID: " + targetContact.getContactID() +
                                 " with Accuracy: " + accuracy;
                         results.add(result);
                     }
